@@ -10,11 +10,12 @@
                             <h3>Login</h3>
                             <p>Please sign in to continue to iPagar.</p>
                         </div>
-                        <form action="auth/verify" method="post" autocomplete="off">
+                        <form action="/auth/login" method="post" autocomplete="off">
+                            @csrf
                             <div class="form-group position-relative has-icon-left">
                                 <label for="username">Username</label>
                                 <div class="position-relative">
-                                    <input type="text" class="form-control" id="username" placeholder="Masukkan Username">
+                                    <input type="text" class="form-control" name="username" id="username" placeholder="Masukkan Username">
                                     <div class="form-control-icon">
                                         <i data-feather="user"></i>
                                     </div>
@@ -25,7 +26,7 @@
                                     <label for="password">Password</label>
                                 </div>
                                 <div class="position-relative">
-                                    <input type="password" class="form-control" id="password" placeholder="Masukkan Password">
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="Masukkan Password">
                                     <div class="form-control-icon">
                                         <i data-feather="lock"></i>
                                     </div>

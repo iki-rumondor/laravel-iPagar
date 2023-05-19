@@ -20,3 +20,5 @@ Route::get('/', [HomeController::class, 'index'] );
 Route::resource('home', HomeController::class );
 Route::get('auth/login', [AuthController::class, 'viewLogin'] );
 Route::get('auth/register', [AuthController::class, 'viewRegister'] );
+Route::post('auth/login', [AuthController::class, 'login'] );
+Route::post('auth/register', [AuthController::class, 'register'] );
