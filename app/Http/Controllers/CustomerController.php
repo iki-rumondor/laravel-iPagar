@@ -28,8 +28,17 @@ class CustomerController extends Controller
         'Malahu',
         'Polohungo',
         'Tenilo',
-        'Tilihuwa' 
+        'Tilihuwa'
     ];
+
+
+    // public function __construct()
+    // {
+    //     if($this->middleware(['role:admin'])){
+    //         return \redirect('/admin');
+    //     }
+    // }
+
 
     public function index()
     {

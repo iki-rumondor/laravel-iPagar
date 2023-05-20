@@ -29,7 +29,8 @@ class AuthController extends Controller
 
         $validatedData['password'] = bcrypt($validatedData['password']);
 
-        User::create($validatedData);
+        $user = User::create($validatedData);
+        $user->assignRole('customer');
 
         return redirect('/auth/login')->with('success', 'Berhasil mendaftar user baru');
     }
@@ -38,13 +39,17 @@ class AuthController extends Controller
     {
         $credentials = $request->validate([
             "username" => "required|exists:users",
-            "password" => "required|min:8",
+            "password" => "required",
         ]);
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/customer')->with('success', 'Selamat datang Admin');
+            if ($credentials['username'] == 'admin') {
+                return redirect()->intended('/admin')->with('success', 'Selamat datang Admin');
+            } else {
+                return redirect()->intended('/customer')->with('success', 'Selamat datang Admin');
+            }
         }
     }
 
