@@ -16,7 +16,7 @@
                     <div class="card">
                         <div class="card-content">
                             <div class="card-header">
-                                <h4 class="card-title">{{ auth()->user()->username }}</h4>
+                                <h4 class="card-title">{{ auth()->user()->username }} - {{ auth()->user()->level }}</h4>
                                 <h6 class="card-subtitle">{{ auth()->user()->phone_num }}</h6>
                             </div>
                             <hr>
@@ -99,10 +99,13 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($orders as $order)
+                                        @if ($order->status == 'Selesai')
+                                            @continue
+                                        @endif
                                             <tr>
                                                 <td>{{ $order->req_date }}</td>
                                                 <td>{{ $order->service }}</td>
-                                                <td><span class="badge {{ $order->status == 'Diajukan' ? 'bg-dark' : 'bg-warning' }}">{{ $order->status }}</span></td>
+                                                <td><span class="badge @if($order->status == 'Diajukan') bg-dark @elseif($order->status == 'Disetujui') bg-success @else bg-danger  @endif">{{ $order->status }}</span></td>
                                             </tr>
                                         @endforeach
                                     </tbody>

@@ -32,14 +32,6 @@ class CustomerController extends Controller
     ];
 
 
-    // public function __construct()
-    // {
-    //     if($this->middleware(['role:admin'])){
-    //         return \redirect('/admin');
-    //     }
-    // }
-
-
     public function index()
     {
 

@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('service');
             $table->string('address');
             $table->string('desa');
+            $table->string('warranty')->nullable();
+            $table->string('status_warranty')->default('Belum Diklaim');
             $table->string('status');
             $table->timestamps();
         });

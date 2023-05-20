@@ -24,6 +24,7 @@ class UserSeeder extends Seeder
             'username' => 12345678,
             'password' => \bcrypt(12345678),
             'phone_num' => 123,
+            'level' => 'Basic',
         ]);
         $user->assignRole('customer');
         

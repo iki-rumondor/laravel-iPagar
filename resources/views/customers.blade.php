@@ -7,8 +7,8 @@
         @include('partials.navbar')
         <div class="main-content container-fluid">
             <div class="page-title">
-                <h3>Garansi iPagar</h3>
-                <p class="text-subtitle text-muted">Nikmati layanan garansi yang disediakan iPagar untuk setiap produk jasa yang telah selesai digunakan</p>
+                <h3>Pelanggan iPagar</h3>
+                <p class="text-subtitle text-muted">Semua pelanggan iPagar</p>
             </div>
 
             <div class="row">
@@ -18,19 +18,22 @@
                             <table class="table mb-0" id="table1">
                                 <thead>
                                     <tr>
-                                        <th>Tanggal Selesai Pengerjaan</th>
-                                        <th>Jasa Yang Dipesan</th>
-                                        <th>Status</th>
-                                        <th>Aksi</th>
+                                        <th>Nama Pelanggan</th>
+                                        <th>Nomor Handphone</th>
+                                        <th>Jumlah Order Berhasil</th>
+                                        <th>Level Customer</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($orders as $order)
+                                    @foreach ($customers as $customer)
+                                        @if ($customer->username == 'admin')
+                                            @continue
+                                        @endif
                                         <tr>
-                                            <td>{{ $order->updated_at->format('d-m-Y') }}</td>
-                                            <td>{{ $order->service }}</td>
-                                            <td><span class="badge {{ $order->status_warranty == 'Belum Diklaim' ? 'bg-danger' : 'bg-success' }}">{{ $order->status_warranty }}</span></td>
-                                            <td><button data-bs-toggle="modal" data-bs-target="#sendModal" class="btn btn-primary btn-sm">Ajukan Keluhan</button></td>
+                                            <td>{{ $customer->username }}</td>
+                                            <td>{{ $customer->phone_num }}</td>
+                                            <td>{{ $customer->orders->where('status', 'Berhasil')->count() }}</td>
+                                            <td>{{ $customer->level }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

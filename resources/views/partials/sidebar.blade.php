@@ -9,28 +9,34 @@
                     <li class='sidebar-title'>Customer</li>
                     <li class="sidebar-item {{ Request::is('customer') ? 'active' : '' }}">
                         <a href="/customer" class='sidebar-link'>
-                            <i data-feather="home" width="20"></i>
+                            <i data-feather="send" width="20"></i>
                             <span>Order Jasa</span>
                         </a>
                     </li>
                     <li class="sidebar-item {{ Request::is('customer/warranty') ? 'active' : '' }}">
                         <a href="/customer/warranty" class='sidebar-link'>
-                            <i data-feather="home" width="20"></i>
+                            <i data-feather="slack" width="20"></i>
                             <span>Garansi iPagar</span>
                         </a>
                     </li>
                     <li class="sidebar-item {{ Request::is('customer/gallery') ? 'active' : '' }}">
                         <a href="/customer/gallery" class='sidebar-link'>
-                            <i data-feather="home" width="20"></i>
+                            <i data-feather="check-square" width="20"></i>
                             <span>Rekomendasi Produk</span>
                         </a>
                     </li>
                 @else
                     <li class='sidebar-title'>Admin</li>
-                    <li class="sidebar-item {{ Request::is('admin/ordering*') ? 'active' : '' }}">
-                        <a href="/admin/ordering" class='sidebar-link'>
-                            <i data-feather="home" width="20"></i>
+                    <li class="sidebar-item {{ Request::is('admin') ? 'active' : '' }}">
+                        <a href="/admin" class='sidebar-link'>
+                            <i data-feather="send" width="20"></i>
                             <span>Pesanan</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item {{ Request::is('admin/customers*') ? 'active' : '' }}">
+                        <a href="/admin/customers" class='sidebar-link'>
+                            <i data-feather="users" width="20"></i>
+                            <span>Pelanggan</span>
                         </a>
                     </li>
                 @endrole

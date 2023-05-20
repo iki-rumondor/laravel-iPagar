@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->string('password');
             $table->string('phone_num')->unique();
+            $table->string('level')->nullable();
             $table->timestamps();
         });
     }
