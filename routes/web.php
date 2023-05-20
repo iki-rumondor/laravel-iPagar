@@ -21,10 +21,13 @@ Route::get('/', [HomeController::class, 'index'] );
 Route::resource('home', HomeController::class );
 Route::get('auth/login', [AuthController::class, 'viewLogin'] );
 Route::get('auth/register', [AuthController::class, 'viewRegister'] );
+Route::get('auth/logout', [AuthController::class, 'logout'] );
 Route::post('auth/login', [AuthController::class, 'login'] );
 Route::post('auth/register', [AuthController::class, 'register'] );
 
 Route::prefix('customer')->group(function () {
     Route::get('', [CustomerController::class, 'index'] );
+    Route::get('warranty', [CustomerController::class, 'viewWarranty'] );
+    Route::get('gallery', [CustomerController::class, 'viewGallery'] );
     Route::post('order', [CustomerController::class, 'order'] );
 });

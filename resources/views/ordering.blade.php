@@ -23,7 +23,7 @@
 
                             <div class="card-body">
                                 <h4 class="card-title mb-3">Isi Data Pemesanan</h4>
-                                <form action="customer/order" class="form" method="post">
+                                <form action="/customer/order" class="form" method="post">
                                     @csrf
                                     <div class="form-body">
                                         <div class="date" data-provide="datepicker">
@@ -115,16 +115,5 @@
         </div>
 
 
-        <footer>
-            <div class="footer clearfix mb-0 text-muted">
-                <div class="float-start">
-                    <p>2022 &copy; Voler</p>
-                </div>
-                <div class="float-end">
-                    <p>Crafted with <span class='text-danger'><i data-feather="heart"></i></span> by <a
-                            href="https://saugi.me">Saugi</a></p>
-                </div>
-            </div>
-        </footer>
     </div>
 @endsection
