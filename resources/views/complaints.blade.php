@@ -35,7 +35,7 @@
                                             <td>{{ $complaint->complaint_desc }}</td>
                                             <td><span class="badge {{ $complaint->status == 'Belum Selesai' ? 'bg-dark' : 'bg-warning' }}">{{ $complaint->status }}</span></td>
                                             <td>
-                                                <a href="" class="btn btn-sm btn-success">Hubungi Konsumen</a>
+                                                <a href="https://api.whatsapp.com/send?phone={{ $complaint->order->user->phone_num }}&text=Hai {{ $complaint->order->user->username }}, Terimakasih telah mengajukan keluhan terhadap produk kami, tim kami akan mengunjungi rumah anda pada tanggal: " class="btn btn-sm btn-success">Hubungi Konsumen</a>
                                                 @if ($complaint->status == 'Belum Selesai')
                                                 <a href="/admin/finish-complaint/{{ $complaint->id }}" class="btn btn-sm btn-primary">Selesai</a>
                                                     

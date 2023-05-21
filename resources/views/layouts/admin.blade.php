@@ -17,6 +17,10 @@
 
 <body>
 
+    @if (session('response'))
+        {!! session('response') !!}
+    @endif
+    
     @if (Auth::check())
         <div id="app">
             @yield('content')

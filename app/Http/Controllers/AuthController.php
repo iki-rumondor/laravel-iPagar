@@ -28,6 +28,8 @@ class AuthController extends Controller
         ]);
 
         $validatedData['password'] = bcrypt($validatedData['password']);
+        $validatedData['level'] = "Basic";
+        $validatedData['phone_num'] =   formatPhoneNumber($validatedData['phone_num']);
 
         $user = User::create($validatedData);
         $user->assignRole('customer');
