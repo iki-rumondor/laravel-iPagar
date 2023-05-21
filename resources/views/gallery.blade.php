@@ -210,7 +210,7 @@
                                     <label for="address" class="sr-only">Alamat Rumah</label>
                                     <input type="text" id="address"
                                         class="form-control @error('address') is-invalid @enderror"
-                                        placeholder="Masukkan Alamat Rumah" name="address" value="{{ old('req_date') }}">
+                                        placeholder="Masukkan Alamat Rumah" name="address" value="{{ old('address') }}">
                                     @error('address')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
