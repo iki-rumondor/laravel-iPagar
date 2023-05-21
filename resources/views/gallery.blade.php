@@ -22,7 +22,7 @@
                                         Pagar: Model 1
                                     </p>
                                     <p class="card-text text-ellipsis">
-                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid nihil, molestias, iure accusantium quis deserunt rerum itaque sed corrupti minus, ipsa culpa inventore quia.
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, cumque!   
                                     </p>
                                     <button class="btn btn-primary" data-bs-toggle="modal"
                                         data-bs-target="#orderModal">Pesan Sekarang</button>
@@ -45,7 +45,7 @@
                                         Pagar: Model 2
                                     </p>
                                     <p class="card-text text-ellipsis">
-                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid nihil, molestias, iure accusantium quis deserunt rerum itaque sed corrupti minus, ipsa culpa inventore quia.
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, cumque!   
                                     </p>
                                     <button class="btn btn-primary" data-bs-toggle="modal"
                                         data-bs-target="#orderModal">Pesan Sekarang</button>
@@ -70,7 +70,7 @@
                                         Pagar: Model 3
                                     </p>
                                     <p class="card-text text-ellipsis">
-                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid nihil, molestias, iure accusantium quis deserunt rerum itaque sed corrupti minus, ipsa culpa inventore quia.
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, cumque!   
                                     </p>
                                     <button class="btn btn-primary" data-bs-toggle="modal"
                                         data-bs-target="#orderModal">Pesan Sekarang</button>
@@ -93,7 +93,7 @@
                                         Pengaman Jendela: Model 1
                                     </p>
                                     <p class="card-text text-ellipsis">
-                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid nihil, molestias, iure accusantium quis deserunt rerum itaque sed corrupti minus, ipsa culpa inventore quia.
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, cumque!   
                                     </p>
                                     <button class="btn btn-primary" data-bs-toggle="modal"
                                         data-bs-target="#orderModal">Pesan Sekarang</button>
@@ -118,7 +118,7 @@
                                         Pengaman Jendela: Model 2
                                     </p>
                                     <p class="card-text text-ellipsis">
-                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid nihil, molestias, iure accusantium quis deserunt rerum itaque sed corrupti minus, ipsa culpa inventore quia.
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, cumque!   
                                     </p>
                                     <button class="btn btn-primary" data-bs-toggle="modal"
                                         data-bs-target="#orderModal">Pesan Sekarang</button>
@@ -141,7 +141,7 @@
                                         Pengaman Jendela: Model 3
                                     </p>
                                     <p class="card-text text-ellipsis">
-                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid nihil, molestias, iure accusantium quis deserunt rerum itaque sed corrupti minus, ipsa culpa inventore quia.
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, cumque!   
                                     </p>
                                     <button class="btn btn-primary" data-bs-toggle="modal"
                                         data-bs-target="#orderModal">Pesan Sekarang</button>
