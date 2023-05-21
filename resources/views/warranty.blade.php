@@ -19,7 +19,7 @@
                             <table class="table mb-0" id="table1">
                                 <thead>
                                     <tr>
-                                        <th>Tanggal Selesai Pengerjaan</th>
+                                        <th>Tanggal Pemesanan</th>
                                         <th>Jasa Yang Dipesan</th>
                                         <th>Status</th>
                                         <th>Aksi</th>
@@ -28,13 +28,18 @@
                                 <tbody>
                                     @foreach ($orders as $order)
                                         <tr>
-                                            <td>{{ $order->updated_at->format('d-m-Y') }}</td>
+                                            <td>{{ $order->created_at->format('d-m-Y') }}</td>
                                             <td>{{ $order->service }}</td>
                                             <td><span
-                                                    class="badge {{ $order->status_warranty == 'Belum Diklaim' ? 'bg-danger' : 'bg-success' }}">{{ $order->status_warranty }}</span>
+                                                    class="badge {{ $order->status_warranty == 'Belum Diklaim' ? 'bg-danger' : ($order->status_warranty == 'Diklaim' ? 'bg-warning' : 'bg-success') }}">{{ $order->status_warranty }}</span>
                                             </td>
-                                            <td><button data-bs-toggle="modal" data-bs-target="#sendModal"
-                                                    class="btn btn-primary btn-sm">Ajukan Keluhan</button></td>
+                                            <td>
+                                                @if ($order->status_warranty == 'Belum Diklaim')
+                                                    <button data-id="{{ $order->id }}" data-bs-toggle="modal"
+                                                        data-bs-target="#sendModal"
+                                                        class="btn btn-primary btn-sm btn-send">Ajukan Keluhan</button>
+                                                @endif
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -64,18 +69,17 @@
                         </svg>
                     </button>
                 </div>
-                <form action="/customer/claim-warranty" class="form" method="post">
+                <form class="form" method="post">
                     @csrf
                     <div class="modal-body">
                         <div class="form-body">
-                            <label for="complaint_desc" class="sr-only">Deskripsi Keluhan</label>
-                            <div class="form-group with-title">
-                                <textarea rows="3" id="complaint_desc" class="form-control @error('complaint_desc') is-invalid @enderror"
-                                    name="complaint_desc">{{ old('complaint_desc') }}</textarea>
+                            <div class="form-group">
+                                <label for="complaint_desc" class="sr-only">Deskripsi Keluhan</label>
+                                <textarea placeholder="Ceritakan permasalahanmu" rows="3" id="complaint_desc"
+                                    class="form-control @error('complaint_desc') is-invalid @enderror" name="complaint_desc">{{ old('complaint_desc') }}</textarea>
                                 @error('complaint_desc')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
-                                <label>Keluhanmu</label>
                             </div>
                         </div>
                     </div>
@@ -93,4 +97,13 @@
             </div>
         </div>
     </div>
+@endpush
+
+@push('scripts')
+    <script>
+        $('.btn-send').click(function() {
+            const id = $(this).data('id')
+            $('#sendModal form').attr('action', '/customer/claim-warranty/' + id)
+        })
+    </script>
 @endpush

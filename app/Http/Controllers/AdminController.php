@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Complaint;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -48,5 +49,20 @@ class AdminController extends Controller
             'title' => 'Pelanggan iPagar',
             'customers' => User::all(),
         ]);
+    }
+
+    public function viewComplaints()
+    {
+        return view('complaints', [
+            'title' => 'Keluhan Pelanggan iPagar',
+            'complaints' => Complaint::all(),
+        ]);
+    }
+
+    public function finishComplaint(Complaint $complaint)
+    {
+        $complaint->update(['status' => 'Selesai']);
+        $complaint->order->update(['status_warranty' => 'Selesai']);
+        return back()->with('success', 'Keluhan telah diselesaikan');
     }
 }
