@@ -21,9 +21,9 @@ class UserSeeder extends Seeder
         $user->assignRole('admin');
 
         $user = User::create([
-            'username' => 12345678,
+            'username' => 'Ilham',
             'password' => \bcrypt(12345678),
-            'phone_num' => 123,
+            'phone_num' => '+6285341965179',
             'level' => 'Basic',
         ]);
         $user->assignRole('customer');

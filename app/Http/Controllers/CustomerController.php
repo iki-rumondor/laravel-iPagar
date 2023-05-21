@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Complaint;
 use App\Models\Order;
 use Illuminate\Http\Request;
 
@@ -76,5 +77,19 @@ class CustomerController extends Controller
             'desa' => $this->desa,
             'orders' => auth()->user()->orders->where('status', 'Selesai'),
         ]);
+    }
+
+    public function claimWarranty(Request $request, Order $order)
+    {
+        $validatedData = $request->validate([
+            "complaint_desc" => "required",
+        ]);
+
+        $order->update(['status_warranty' => 'Diklaim']);
+
+        $validatedData['order_id'] = $order->id;
+        Complaint::create($validatedData);
+
+        return back()->with('success', 'Keluhan berhasil dikirimkan, mohon menunggu konfirmasi dari pihak iPagar');
     }
 }

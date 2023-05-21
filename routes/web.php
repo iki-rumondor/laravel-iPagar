@@ -34,6 +34,7 @@ Route::prefix('customer')->middleware(['role:customer'], 'auth')->group(function
     Route::get('warranty', [CustomerController::class, 'viewWarranty'] );
     Route::get('gallery', [CustomerController::class, 'viewGallery'] );
     Route::post('order', [CustomerController::class, 'order'] );
+    Route::post('claim-warranty/{order}', [CustomerController::class, 'claimWarranty'] );
 });
 
 Route::prefix('admin')->middleware(['role:admin'], 'auth')->group(function () {
@@ -42,4 +43,6 @@ Route::prefix('admin')->middleware(['role:admin'], 'auth')->group(function () {
     Route::get('deny-order/{order}', [AdminController::class, 'denyOrder'] );
     Route::get('finish-order/{order}', [AdminController::class, 'finishOrder'] );
     Route::get('customers', [AdminController::class, 'viewCustomers'] );
+    Route::get('complaints', [AdminController::class, 'viewComplaints'] );
+    Route::get('finish-complaint/{complaint}', [AdminController::class, 'finishComplaint'] );
 });

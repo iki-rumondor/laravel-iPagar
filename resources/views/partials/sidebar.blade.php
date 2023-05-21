@@ -39,6 +39,12 @@
                             <span>Pelanggan</span>
                         </a>
                     </li>
+                    <li class="sidebar-item {{ Request::is('admin/complaints*') ? 'active' : '' }}">
+                        <a href="/admin/complaints" class='sidebar-link'>
+                            <i data-feather="refresh-ccw" width="20"></i>
+                            <span>Keluhan Pelanggan</span>
+                        </a>
+                    </li>
                 @endrole
 
             </ul>
