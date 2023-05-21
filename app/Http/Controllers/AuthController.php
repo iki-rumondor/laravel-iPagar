@@ -10,12 +10,16 @@ class AuthController extends Controller
 {
     public function viewLogin()
     {
-        return view('auth.login');
+        return view('auth.login', [
+            'title' => 'Login Akun'
+        ]);
     }
 
     public function viewRegister()
     {
-        return view('auth.register');
+        return view('auth.register', [
+            'title' => 'Registrasi Akun'
+        ]);
     }
 
     public function register(Request $request)
