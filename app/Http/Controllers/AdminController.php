@@ -30,13 +30,15 @@ class AdminController extends Controller
 
     public function finishOrder(Order $order)
     {
-        $orders = $order->user->orders->count();
-        if($orders > 5){
-            $order->user->update('level', 'Intermediate');
-        }elseif($orders > 100){
-            $order->user->update('level', 'Pro');
-        }
         $order->update(['status' => 'Selesai']);
+        $orders = $order->user->orders->where('status', 'Selesai')->count();
+
+        if($orders > 100){
+            $order->user->update(['level' => 'Pro']);
+        }elseif($orders > 5){
+            $order->user->update(['level' => 'Intermediate']);
+        }
+
         return \back()->with('success', 'Persetujuan berhasil');
     }
 

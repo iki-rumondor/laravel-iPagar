@@ -57,7 +57,7 @@ class CustomerController extends Controller
 
         Order::create($validatedData);
 
-        return \back()->with('success', 'Berhasil mengajukan pemesanan jasa');
+        return redirect('/customer')->with('success', 'Berhasil mengajukan pemesanan jasa');
     }
 
     public function viewWarranty()

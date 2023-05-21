@@ -41,7 +41,6 @@
 
     @stack('modals')
 
-
     <script src="{{ asset('admin_assets/js/feather-icons/feather.min.js') }}"></script>
     <script src="{{ asset('admin_assets/js/app.js') }}"></script>
     <script src="{{ asset('admin_assets/js/main.js') }}"></script>

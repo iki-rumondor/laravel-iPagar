@@ -34,12 +34,12 @@
                                             <td>{{ $order->req_date }}</td>
                                             <td>
                                                 @if ($order->status == 'Diajukan')
-                                                    <a class="btn btn-sm btn-success" data-service="{{ $order->service }}"
-                                                        data-id="{{ $order->id }}">Setuju</a>
-                                                    <a class="btn btn-sm btn-danger" data-service="{{ $order->service }}"
-                                                        data-id="{{ $order->id }}">Tolak</a>
+                                                    <a class="btn btn-sm btn-success p-1" data-service="{{ $order->service }}"
+                                                        data-id="{{ $order->id }}"><i data-feather="check"></i></a>
+                                                    <a class="btn btn-sm btn-danger p-1" data-service="{{ $order->service }}"
+                                                        data-id="{{ $order->id }}"><i data-feather="x"></i></a>
                                                 @elseif($order->status == 'Disetujui')
-                                                    <a class="btn btn-sm btn-primary" data-service="{{ $order->service }}"
+                                                    <a class="btn btn-sm btn-primary p-1" data-service="{{ $order->service }}"
                                                         data-id="{{ $order->id }}">Finish</a>
                                                 @else
                                                 @endif

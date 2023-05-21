@@ -32,7 +32,7 @@
                                         <tr>
                                             <td>{{ $customer->username }}</td>
                                             <td>{{ $customer->phone_num }}</td>
-                                            <td>{{ $customer->orders->where('status', 'Berhasil')->count() }}</td>
+                                            <td>{{ $customer->orders->where('status', 'Selesai')->count() }}</td>
                                             <td>{{ $customer->level }}</td>
                                         </tr>
                                     @endforeach
